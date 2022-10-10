@@ -23,9 +23,10 @@ slowPrintSum(2, 8); // prints '10' after 500 ms
 ***********************************************************************/
 
 function postponeWithArgs(cb, delay) {
-  // Your code here
+  return function(...args) {
+    setTimeout(cb, delay, ...args)
+  }
 }
-
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
   module.exports = postponeWithArgs;
